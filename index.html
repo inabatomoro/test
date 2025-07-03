@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO WORKERs Community - #スタワー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007aff;
+            --secondary-color: #333;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333;
+            --light-text-color: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 120px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            font-weight: 700;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: backwards;
+        }
+
+        .container {
+            padding: 4rem 1rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            margin-top: 1.5rem;
+            text-align: right;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-card::before {
+            content: '“';
+            font-family: 'Poppins', sans-serif;
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 5rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #0056b3;
+        }
+
+        .event-card {
+            background: var(--card-background);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .event-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .event-button {
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>STUDIO WORKERs</h1>
+        <p>#スタワー で繋がる、ノーコードの世界。</p>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2 class="section-title">Voice from Community</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>STUDIO初心者でしたが、イベントに参加して一気に疑問が解消しました！同じ目標を持つ仲間と話せてモチベーションも上がります。</p>
+                    <p class="author">- Designer, 20代</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>デザインで行き詰まっていた部分を相談したら、すごいアイディアをもらえました。#スタワー のコミュニティ最高です。刺激をもらえます！</p>
+                    <p class="author">- Marketer, 30代</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>フリーランスとして活動する上で、横の繋がりは本当に貴重。有益な情報交換ができて、仕事の幅も広がりました。また参加します！</p>
+                    <p class="author">- Freelancer, 30代</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-card">
+                <h3>STUDIO もくもく会 & 交流会 #15</h3>
+                <p><strong>日時:</strong> 2024年8月15日(木) 19:00〜</p>
+                <p><strong>場所:</strong> オンライン (Zoom)</p>
+                <p>STUDIO初心者から上級者まで、誰でも歓迎！<br>一緒に作業したり、情報交換したり、新しい繋がりを作りましょう。</p>
+                <a href="#" class="cta-button event-button">参加チケットを申し込む (¥1,000)</a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>あなたも、ノーコードでアイデアを形に。</h2>
+            <p style="margin-bottom: 2.5rem;">STUDIOの可能性は無限大。コミュニティに参加して、新しい挑戦を始めよう。</p>
+            <a href="https://studio.design/" target="_blank" class="cta-button">STUDIO公式サイトへ</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 STUDIO WORKERs Community (Fan Site)</p>
+    </footer>
+
+</body>
+</html>
