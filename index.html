@@ -192,7 +192,40 @@
             .hero p { font-size: 1.2rem; }
         }
 
+    .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: var(--card-background);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -202,6 +235,27 @@
     </header>
 
     <main>
+        <section class="container">
+            <h2 class="section-title">Why STUDIO?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>コード不要で自由自在</h3>
+                    <p>コーディングの知識は一切不要。ドラッグ＆ドロップの直感的な操作で、プロレベルのデザインがあなたのものに。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>CMS機能で簡単更新</h3>
+                    <p>ブログやお知らせ、実績紹介も簡単。リアルタイムで情報を更新し、常に最新のコンテンツを届けられます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>完全レスポンシブ対応</h3>
+                    <p>PC、タブレット、スマホ。どんなデバイスでも美しく表示されるサイトを、追加作業なしで実現できます。</p>
+                </div>
+            </div>
+        </section>
+
         <section class="container">
             <h2 class="section-title">Voice from Community</h2>
             <div class="testimonials-grid">
@@ -228,6 +282,27 @@
                 <p><strong>場所:</strong> オンライン (Zoom)</p>
                 <p>STUDIO初心者から上級者まで、誰でも歓迎！<br>一緒に作業したり、情報交換したり、新しい繋がりを作りましょう。</p>
                 <a href="#" class="cta-button event-button">参加チケットを申し込む (¥1,000)</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Community Benefits</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>スキルアップ</h3>
+                    <p>最新情報やテクニックを交換し、一人では解決できない問題もコミュニティの力で乗り越えられます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>仲間との出会い</h3>
+                    <p>同じ目標を持つ仲間と繋がり、モチベーションを高め合えます。新たなプロジェクトが生まれることも。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>仕事の機会</h3>
+                    <p>コミュニティ内での交流から、新しい仕事の依頼やコラボレーションに繋がるチャンスがあります。</p>
+                </div>
             </div>
         </section>
 
