@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIO WORKERs Community - #スタワー</title>
+    <title>STUDIO WORKERs - Creative Showcase</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300,400,700&family=Poppins:wght@600,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #007aff;
-            --secondary-color: #333;
-            --background-color: #f8f9fa;
-            --card-background: #ffffff;
-            --text-color: #333;
-            --light-text-color: #f8f9fa;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --background-color: #1a1a1a; /* Dark background for dramatic effect */
+            --card-background: #252525;
+            --text-color: #e0e0e0;
+            --light-text-color: #ffffff;
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
         }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
@@ -29,293 +28,269 @@
         }
 
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-text-color);
+            background: none; /* Remove background image to focus on the works */
             text-align: center;
-            padding: 120px 20px;
+            padding: 15vh 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 80vh;
         }
 
         .hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
+            font-size: 4.5rem;
+            font-weight: 700;
             margin: 0;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            animation: fadeInDown 1s ease-out;
+            color: var(--light-text-color);
+            letter-spacing: 1px;
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-top: 1rem;
-            font-weight: 700;
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: backwards;
+            font-weight: 300;
+            max-width: 650px;
+            color: var(--text-color);
         }
 
-        .container {
-            padding: 4rem 1rem;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 3rem;
+        .showcase-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 5rem auto;
             position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 1rem auto 0;
+            height: 2800px; /* Set a fixed height for the canvas */
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--card-background);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .testimonial-card p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            margin-top: 1.5rem;
-            text-align: right;
-            color: var(--primary-color);
-        }
-        
-        .testimonial-card::before {
-            content: '“';
-            font-family: 'Poppins', sans-serif;
-            font-size: 5rem;
-            color: var(--primary-color);
-            opacity: 0.1;
+        .showcase-item {
             position: absolute;
-            top: -10px;
-            left: 10px;
-        }
-
-        .cta-section {
-            background-color: var(--secondary-color);
-            color: var(--light-text-color);
-            text-align: center;
-            padding: 5rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            background-color: #0056b3;
-        }
-
-        .event-card {
-            background: var(--card-background);
-            padding: 2.5rem;
-            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: var(--delay, 0s);
             box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
-        .event-card h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-top: 0;
+        .showcase-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .event-button {
-            margin-top: 1.5rem;
+        .showcase-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            height: 100%;
         }
+
+        .showcase-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .showcase-item:hover .showcase-image-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .showcase-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--light-text-color);
+            margin: 0 0 0.5rem 0;
+            transform: translateY(10px);
+            transition: transform 0.5s ease 0.1s;
+        }
+
+        .image-overlay p {
+            font-size: 1rem;
+            margin: 0;
+            color: var(--text-color);
+            transform: translateY(10px);
+            transition: transform 0.5s ease 0.2s;
+        }
+        
+        .showcase-item:hover .image-overlay h3,
+        .showcase-item:hover .image-overlay p {
+            transform: translateY(0);
+        }
+
+        /* Individual item positioning */
+        #item1 { top: 0; left: 5%; width: 35%; height: 600px; --delay: 0s; }
+        #item2 { top: 150px; left: 50%; width: 45%; height: 700px; --delay: 0.2s; }
+        #item3 { top: 700px; left: 0; width: 40%; height: 650px; --delay: 0.1s; }
+        #item4 { top: 950px; left: 45%; width: 35%; height: 550px; --delay: 0.3s; }
+        #item5 { top: 1450px; left: 10%; width: 50%; height: 750px; --delay: 0.2s; }
+        #item6 { top: 1600px; left: 65%; width: 30%; height: 600px; --delay: 0.4s; }
+        #item7 { top: 2250px; left: 0%; width: 38%; height: 500px; --delay: 0.3s; }
+        #item8 { top: 2300px; left: 48%; width: 42%; height: 450px; --delay: 0.5s; }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #777;
+            padding: 4rem 2rem;
+            font-size: 1rem;
+            color: #888;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        @media (max-width: 1200px) {
+            .showcase-container { height: 2400px; }
+            #item1 { width: 40%; }
+            #item2 { left: 55%; width: 40%; }
+            #item3 { width: 45%; }
+            #item4 { top: 850px; left: 50%; }
+            #item5 { top: 1300px; }
+            #item6 { top: 1450px; }
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .hero p { font-size: 1.2rem; }
-        }
-
-    .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .feature-card {
-            background: var(--card-background);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .showcase-container { height: auto; position: static; }
+            .showcase-item { position: static; width: 100%; margin-bottom: 2rem; height: auto; }
+            .showcase-image-wrapper { height: 500px; }
         }
 
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header class="hero">
-        <h1>STUDIO WORKERs</h1>
-        <p>#スタワー で繋がる、ノーコードの世界。</p>
+        <h1>Creative Showcase</h1>
+        <p>#スタワー から生まれた、想像を超えるクリエイティブの数々。<br>スクロールして、私たちの世界に触れてください。</p>
     </header>
 
     <main>
-        <section class="container">
-            <h2 class="section-title">Why STUDIO?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h3>コード不要で自由自在</h3>
-                    <p>コーディングの知識は一切不要。ドラッグ＆ドロップの直感的な操作で、プロレベルのデザインがあなたのものに。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-feather-alt"></i></div>
-                    <h3>CMS機能で簡単更新</h3>
-                    <p>ブログやお知らせ、実績紹介も簡単。リアルタイムで情報を更新し、常に最新のコンテンツを届けられます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>完全レスポンシブ対応</h3>
-                    <p>PC、タブレット、スマホ。どんなデバイスでも美しく表示されるサイトを、追加作業なしで実現できます。</p>
-                </div>
+        <div class="showcase-container">
+            <div class="showcase-item" id="item1" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?auto=format&fit=crop&w=800&q=80" alt="Abstract web design">
+                    <div class="image-overlay">
+                        <h3>Project Ether</h3>
+                        <p>Created by T. Yamada</p>
+                    </div>
+                </a>
             </div>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">Voice from Community</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>STUDIO初心者でしたが、イベントに参加して一気に疑問が解消しました！同じ目標を持つ仲間と話せてモチベーションも上がります。</p>
-                    <p class="author">- Designer, 20代</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>デザインで行き詰まっていた部分を相談したら、すごいアイディアをもらえました。#スタワー のコミュニティ最高です。刺激をもらえます！</p>
-                    <p class="author">- Marketer, 30代</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>フリーランスとして活動する上で、横の繋がりは本当に貴重。有益な情報交換ができて、仕事の幅も広がりました。また参加します！</p>
-                    <p class="author">- Freelancer, 30代</p>
-                </div>
+            <div class="showcase-item" id="item2" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=800&q=80" alt="Gradient in tech">
+                    <div class="image-overlay">
+                        <h3>Aura Landing Page</h3>
+                        <p>Created by H. Sato</p>
+                    </div>
+                </a>
             </div>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="event-card">
-                <h3>STUDIO もくもく会 & 交流会 #15</h3>
-                <p><strong>日時:</strong> 2024年8月15日(木) 19:00〜</p>
-                <p><strong>場所:</strong> オンライン (Zoom)</p>
-                <p>STUDIO初心者から上級者まで、誰でも歓迎！<br>一緒に作業したり、情報交換したり、新しい繋がりを作りましょう。</p>
-                <a href="#" class="cta-button event-button">参加チケットを申し込む (¥1,000)</a>
+            <div class="showcase-item" id="item3" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1488972685288-c331b1fc4c5e?auto=format&fit=crop&w=800&q=80" alt="Minimalist architecture">
+                    <div class="image-overlay">
+                        <h3>Monolith CMS</h3>
+                        <p>Created by I. Suzuki</p>
+                    </div>
+                </a>
             </div>
-        </section>
-
-        <section class="container">
-            <h2 class="section-title">Community Benefits</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>スキルアップ</h3>
-                    <p>最新情報やテクニックを交換し、一人では解決できない問題もコミュニティの力で乗り越えられます。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-users"></i></div>
-                    <h3>仲間との出会い</h3>
-                    <p>同じ目標を持つ仲間と繋がり、モチベーションを高め合えます。新たなプロジェクトが生まれることも。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3>仕事の機会</h3>
-                    <p>コミュニティ内での交流から、新しい仕事の依頼やコラボレーションに繋がるチャンスがあります。</p>
-                </div>
+            <div class="showcase-item" id="item4" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?auto=format&fit=crop&w=800&q=80" alt="Dark mode design">
+                    <div class="image-overlay">
+                        <h3>Eclipse E-Commerce</h3>
+                        <p>Created by H. Sato</p>
+                    </div>
+                </a>
             </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>あなたも、ノーコードでアイデアを形に。</h2>
-            <p style="margin-bottom: 2.5rem;">STUDIOの可能性は無限大。コミュニティに参加して、新しい挑戦を始めよう。</p>
-            <a href="https://studio.design/" target="_blank" class="cta-button">STUDIO公式サイトへ</a>
-        </section>
+            <div class="showcase-item" id="item5" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80" alt="Nature inspired UI">
+                    <div class="image-overlay">
+                        <h3>Project Gaia</h3>
+                        <p>Created by T. Yamada</p>
+                    </div>
+                </a>
+            </div>
+            <div class="showcase-item" id="item6" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=800&q=80" alt="Cosmic exploration theme">
+                    <div class="image-overlay">
+                        <h3>Stellar Event Site</h3>
+                        <p>Created by I. Suzuki</p>
+                    </div>
+                </a>
+            </div>
+             <div class="showcase-item" id="item7" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&fit=crop&w=800&q=80" alt="Holographic UI">
+                    <div class="image-overlay">
+                        <h3>Holo-UI Kit</h3>
+                        <p>Created by H. Sato</p>
+                    </div>
+                </a>
+            </div>
+             <div class="showcase-item" id="item8" data-scroll>
+                <a href="#" class="showcase-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1561796432-d65b87133f3a?auto=format&fit=crop&w=800&q=80" alt="Typography art">
+                    <div class="image-overlay">
+                        <h3>Kinetic Type</h3>
+                        <p>Created by T. Yamada</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 STUDIO WORKERs Community (Fan Site)</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollElements = document.querySelectorAll("[data-scroll]");
+
+            if (!("IntersectionObserver" in window)) {
+                console.warn("IntersectionObserver not supported, animations will not run.");
+                scrollElements.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        // Optional: stop observing once the element is visible
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            scrollElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
