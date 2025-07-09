@@ -26,7 +26,18 @@
             color: var(--text-color);
             overflow-x: hidden;
             box-shadow: 0 0 100px rgba(0, 122, 255, 0.15);
-            cursor: none; /* Hide default cursor */
+        }
+
+        body:not(.modal-is-open) {
+            cursor: none;
+        }
+
+        body:not(.modal-is-open) {
+            cursor: none;
+        }
+
+        body.modal-is-open {
+            overflow: hidden;
         }
 
         .mouse-stalker {
@@ -45,10 +56,8 @@
             backdrop-filter: blur(1px);
         }
 
-        .mouse-stalker.is-hover {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 0, 0, 0.2);
+        body.modal-is-open .mouse-stalker {
+            display: none;
         }
 
         .hero {
@@ -220,6 +229,7 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            cursor: default;
         }
 
         .modal-overlay.is-active {
@@ -302,8 +312,6 @@
         .modal-view-more:hover {
             background-color: #005bb5;
         }
-
-    </style>
 
     </style>
 </head>
@@ -677,14 +685,14 @@
                     modalDescription.textContent = work.description;
                     modalViewMore.href = work.detailUrl;
                     modalOverlay.classList.add('is-active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling background
+                    document.body.classList.add('modal-is-open');
                 }
             };
 
             // Close Modal Function
             const closeModal = () => {
                 modalOverlay.classList.remove('is-active');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.classList.remove('modal-is-open');
             };
 
             // Event Listeners for opening modal
