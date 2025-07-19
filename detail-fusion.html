@@ -64,6 +64,42 @@
         .back-link:hover {
             color: #005bb5;
         }
+        .action-buttons {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+        }
+        .action-button {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .action-button.primary {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+        }
+        .action-button.primary:hover {
+            background-color: #005bb5;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.2);
+        }
+        .action-button.secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        .action-button.secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -73,6 +109,10 @@
         <p class="detail-creator">Created by A. Tanaka</p>
         <p class="detail-description">抽象的な絵画から着想を得た、複数のアートスタイルを融合させたデザイン。創造性を刺激します。</p>
         <a href="index.html" class="back-link">&larr; Back to Showcase</a>
+        <div class="action-buttons">
+            <a href="website-fusion.html" class="action-button primary">Visit Website</a>
+            <a href="contact-a-tanaka.html" class="action-button secondary">Contact Creator</a>
+        </div>
     </div>
 </body>
 </html>
